@@ -124,6 +124,14 @@ const MenuNameLi = styled.li`
   display: inline-block;
 `;
 
+const MenuNameLiEm = styled.em`  
+    position: absolute;
+    top: 10px;
+    right: -5px;
+    pointer-events: none;
+    font-style: normal;
+`;
+
 const Aside = styled.aside`
   padding: 9px 0;
   height: 100%;
@@ -216,9 +224,19 @@ export default function App() {
               <MenuNameLi>이벤트</MenuNameLi>
               <MenuNameLi>직군별 연봉</MenuNameLi>
               <MenuNameLi>이력서</MenuNameLi>
-              <MenuNameLi>커뮤니트</MenuNameLi>
+              <MenuNameLi>
+                커뮤니티
+                <MenuNameLiEm>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11"><g fill="none" fillRule="evenodd" fontFamily="AppleSDGothicNeo-SemiBold, Apple SD Gothic Neo" fontSize="9" fontWeight="500"><g fill="#36F"><g><g><g><g><g><g><text transform="translate(-931.000000, -13.000000) translate(224.000000, 7.000000) translate(210.000000, 6.000000) translate(350.000000, 0.000000) translate(147.000000, 0.000000)"><tspan x="0" y="8">New</tspan></text></g></g></g></g></g></g></g></g></svg>
+                </MenuNameLiEm>
+              </MenuNameLi>
               <MenuNameLi>프리랜서</MenuNameLi>
-              <MenuNameLi>AI 합격예측</MenuNameLi>
+              <MenuNameLi>
+                AI 합격예측
+                <MenuNameLiEm>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11"><g fill="none" fillRule="evenodd" fontFamily="AppleSDGothicNeo-SemiBold, Apple SD Gothic Neo" fontSize="9" fontWeight="500"><g fill="#36F"><g><g><g><g><g><g><text transform="translate(-931.000000, -13.000000) translate(224.000000, 7.000000) translate(210.000000, 6.000000) translate(350.000000, 0.000000) translate(147.000000, 0.000000)"><tspan x="0" y="8">New</tspan></text></g></g></g></g></g></g></g></g></svg>
+                </MenuNameLiEm>
+              </MenuNameLi>
             </MenuNameUl>
             <Aside>
               <AsideUl>
