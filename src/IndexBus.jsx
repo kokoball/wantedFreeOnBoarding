@@ -102,6 +102,8 @@ const Center = styled.div`
 export default React.memo(({
   sliderRef,
   mobileTypes,
+  leftButton,
+  rightButton,
 
 }) => {
   function getTypeName(type) {
@@ -144,7 +146,10 @@ export default React.memo(({
           </BusCard>
         ))}
       </MobileSwiper>
-
+      <Center>
+        <Button ref={leftButton}>Next</Button>
+        <Button ref={rightButton}>Next</Button>
+      </Center>
     </Container>
   );
 });
