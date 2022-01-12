@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Header from './Header';
+import IndexPage from './IndexPage';
 import PaddingBox from './PaddingBox';
 import Slider from './Slider';
 
@@ -9,7 +10,9 @@ export default function App() {
     <div>
       <Header />
       <PaddingBox />
-      <Slider />
+      {/* <Slider /> */}
+      <IndexPage />
+      <PaddingBox />
     </div>
   );
 }

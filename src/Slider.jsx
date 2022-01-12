@@ -4,12 +4,16 @@ import Slide from './Slide';
 import img1 from './images/banner1.jpg';
 import img2 from './images/banner2.jpg';
 import img3 from './images/banner3.jpg';
+import img4 from './images/banner4.jpg';
+import img5 from './images/banner5.jpg';
+import img6 from './images/banner6.jpg';
+import img7 from './images/banner7.jpg';
 
 const Container = styled.div`
   width: 100%;
   margin: auto;
   height: 500px;
-  overflow: hidden; // 선을 넘어간 이미지들은 숨겨줍니다.
+  overflow: hidden;
 `;
 const Button = styled.div`
   all: unset;
@@ -27,17 +31,17 @@ const Button = styled.div`
 const SliderContainer = styled.div`
   margin: 0 auto;
   margin-bottom: 2em;
-  display: flex; // 이미지들을 가로로 나열합니다.
+  display: flex;
 `;
 
 const Center = styled.div`
   text-align: center;
 `;
 
-const TOTAL_SLIDES = 2; // 전체 슬라이드 개수(총3개. 배열로 계산)
+const TOTAL_SLIDES = 7; // 전체 슬라이드 개수
 
 export default function Slider() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(1);
   const slideRef = useRef(null);
 
   // Next 버튼 클릭 시
@@ -71,6 +75,10 @@ export default function Slider() {
         <Slide img={img1} />
         <Slide img={img2} />
         <Slide img={img3} />
+        <Slide img={img4} />
+        <Slide img={img5} />
+        <Slide img={img6} />
+        <Slide img={img7} />
       </SliderContainer>
       <Center>
         <Button onClick={PrevSlide}>Prev</Button>
