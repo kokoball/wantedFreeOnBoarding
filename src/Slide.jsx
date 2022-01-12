@@ -13,4 +13,6 @@ const IMG = styled.img`
     height: 300px;
   }
   
+  width: 1060px;
+  height: 300px;
 `;
