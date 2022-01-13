@@ -10,6 +10,7 @@ const IMG = styled.img`
   height: 183px;
   margin-top: 15px;
   padding: 0 2%;
+  border-radius: 4px;
   object-fit: cover;
   @media (min-width: 1200px) {
     height: 300px;

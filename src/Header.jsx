@@ -114,7 +114,7 @@ const LogoImg = styled.img`
 `;
 
 const MenuNameDiv = styled.div`
-  @media (min-width: 768px) and (max-width: 1100px){
+  @media (max-width: 1100px){
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -164,8 +164,7 @@ const MenuNameLi3 = styled.li`
   padding: 15px;
   display: inline-block;
   @media (max-width: 865px) {
-    visibility: hidden;
-    padding: 5px;
+    display: none;
   }
 `;
 
