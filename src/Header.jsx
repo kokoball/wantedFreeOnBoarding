@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import logo from './images/logo.png';
 
 const HeaderContainer = styled.header`
+top: 4px;
 position: fixed;
 padding-right: initial ;
 width: 100%;

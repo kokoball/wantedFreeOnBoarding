@@ -196,15 +196,24 @@ export default React.memo(({
   rightButton,
 
 }) => {
-  function getTypeName(type) {
-    if (type === 0) return '0';
-    if (type === 1) return '1';
-    if (type === 2) return '2';
-    if (type === 3) return '3';
-    if (type === 4) return '4';
-    if (type === 5) return '5';
-    if (type === 6) return '6';
-    if (type === 7) return '7';
+  function getTypeH2(type) {
+    if (type === 0) return '유저 경험을 설계하라!';
+    if (type === 1) return '개발자 성장 비결 공개!';
+    if (type === 2) return '믿을 것은 데이터 뿐!';
+    if (type === 3) return '리크루터 커리어 가이드';
+    if (type === 4) return '해, 커리어 EP 02 공개';
+    if (type === 5) return '스타벅스 굿즈 좋아하세요?';
+    if (type === 6) return '아는 만큼 보인다!';
+    return '22';
+  }
+  function getTypeH3(type) {
+    if (type === 0) return '문제를 해결하는 프로덕트 디자인';
+    if (type === 1) return '글 쓰는 개발자들의 이야기';
+    if (type === 2) return '요즘 데이터팀은 어떻게 일할까?';
+    if (type === 3) return '싼마이 리크루터가 되지 않기 위해';
+    if (type === 4) return '최종 발표를 위한 마지막 관문 2라운드의 승자는?';
+    if (type === 5) return '사랑받는 디자인의 비밀';
+    if (type === 6) return '노동법 채용 시리즈';
     return '22';
   }
   function getTypeImg(type) {
@@ -230,10 +239,10 @@ export default React.memo(({
             </Info>
             <InformationDiv busType={type}>
               <Informationh2>
-                아는만큼 보인다
+                {getTypeH2(type)}
               </Informationh2>
               <Informationh3>
-                요즘
+                {getTypeH3(type)}
               </Informationh3>
               <Informationhr />
               <div style={{ height: '10px' }} />
@@ -253,12 +262,12 @@ export default React.memo(({
           </BusCard>
         ))}
       </MobileSwiper>
-      <Button ref={leftButton} style={{ right: 'calc((100% - 920px) / 2)' }}>
+      <Button ref={rightButton} style={{ right: 'calc((100% - 920px) / 2)' }}>
         <ButtonSpan>
           <svg style={{ width: '1em', height: '1em' }} viewBox="0 0 18 18"><path d="m11.955 9-5.978 5.977a.563.563 0 0 0 .796.796l6.375-6.375a.563.563 0 0 0 0-.796L6.773 2.227a.562.562 0 1 0-.796.796L11.955 9z" /></svg>
         </ButtonSpan>
       </Button>
-      <Button ref={rightButton} style={{ left: 'calc((100% - 920px) / 2' }}>
+      <Button ref={leftButton} style={{ left: 'calc((100% - 920px) / 2' }}>
         <ButtonSpan>
           <svg style={{ width: '1em', height: '1em' }} viewBox="0 0 18 18"><path d="m6.045 9 5.978-5.977a.563.563 0 1 0-.796-.796L4.852 8.602a.562.562 0 0 0 0 .796l6.375 6.375a.563.563 0 0 0 .796-.796L6.045 9z" /></svg>
         </ButtonSpan>
