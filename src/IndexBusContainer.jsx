@@ -112,7 +112,6 @@ export default function IndexBusContainer() {
     sliderRef.current.addEventListener('touchcancel', slideTouchCancel);
     leftButton.current.addEventListener('click', LeftClick);
     rightButton.current.addEventListener('click', RightClick);
-    // sliderRef.current.addEventListener('click', PrevSlide);
 
     return () => { if (sliderRef.current)sliderRef.current.removeEventListener('touchmove', slideTouchMove); };
   }, []);

@@ -5,13 +5,16 @@ import styled from 'styled-components';
 import logo from './images/logo.png';
 
 const HeaderContainer = styled.header`
-top: 4px;
-position: fixed;
-padding-right: initial ;
-width: 100%;
-background-color: #fff;
-z-index: 100;
-box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
+  top: 4px;
+  position: fixed;
+  padding-right: initial ;
+  width: 100%;
+  background-color: #fff;
+  z-index: 100;
+  box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
+  @media (max-width: 1100px){
+    height: 110px;
+  }
 `;
 
 const NavMediaQuery = styled.div`
@@ -39,8 +42,10 @@ height: 50px;
 `;
 const MainBarNav = styled.nav`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
 `;
 const Button = styled.button`
   margin: 0;
@@ -108,6 +113,17 @@ const LogoImg = styled.img`
   padding-left: 7px;
 `;
 
+const MenuNameDiv = styled.div`
+  @media (min-width: 768px) and (max-width: 1100px){
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px 30px;
+    height: 30px;
+    width: 100%;
+  }
+`;
+
 const MenuNameUl = styled.li`  
   list-style: none;
   height: inherit;
@@ -115,7 +131,7 @@ const MenuNameUl = styled.li`
   margin: 0;
 `;
 
-const MenuNameLi = styled.li`  
+const MenuNameLi1 = styled.li`  
   list-style: none;
   position: relative;
   vertical-align: middle;
@@ -124,6 +140,33 @@ const MenuNameLi = styled.li`
   font-weight: 600;
   padding: 15px;
   display: inline-block;
+  @media (min-width: 865px) {
+    display: none;
+  }
+`;
+const MenuNameLi2 = styled.li`  
+  list-style: none;
+  position: relative;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  padding: 15px;
+  display: inline-block;
+`;
+const MenuNameLi3 = styled.li`  
+  list-style: none;
+  position: relative;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  padding: 15px;
+  display: inline-block;
+  @media (max-width: 865px) {
+    visibility: hidden;
+    padding: 5px;
+  }
 `;
 
 const MenuNameLiEm = styled.em`  
@@ -165,6 +208,28 @@ const AsideLi = styled.li`
   height: 100%;
   vertical-align: middle;
 `;
+const AsideLiMenu = styled.li`
+  list-style: none;
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  @media (min-width: 1100px) {
+    display: none;
+  }
+`;
+
+const AsideLiMedia = styled.li`
+  list-style: none;
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  @media (max-width: 1100px) {
+    display: none;
+  }
+`;
+
 const LeftDivision = styled.div`
   display: inline-block;
   content: "";
@@ -214,30 +279,31 @@ export default function Header() {
     <HeaderContainer>
       <NavMediaQuery>
         <MainBarNav>
-          <div>
+          <MenuNameDiv>
             <Button type="button">
               <MenuImg src="https://static.wanted.co.kr/images/icon-menu.png" />
             </Button>
             <LogoImg src={logo} alt="" />
-          </div>
+          </MenuNameDiv>
           <MenuNameUl>
-            <MenuNameLi>채용</MenuNameLi>
-            <MenuNameLi>이벤트</MenuNameLi>
-            <MenuNameLi>직군별 연봉</MenuNameLi>
-            <MenuNameLi>이력서</MenuNameLi>
-            <MenuNameLi>
+            <MenuNameLi1>홈</MenuNameLi1>
+            <MenuNameLi2>채용</MenuNameLi2>
+            <MenuNameLi2>이벤트</MenuNameLi2>
+            <MenuNameLi3>직군별 연봉</MenuNameLi3>
+            <MenuNameLi3>이력서</MenuNameLi3>
+            <MenuNameLi3>
               커뮤니티
               <MenuNameLiEm>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11"><g fill="none" fillRule="evenodd" fontFamily="AppleSDGothicNeo-SemiBold, Apple SD Gothic Neo" fontSize="9" fontWeight="500"><g fill="#36F"><g><g><g><g><g><g><text transform="translate(-931.000000, -13.000000) translate(224.000000, 7.000000) translate(210.000000, 6.000000) translate(350.000000, 0.000000) translate(147.000000, 0.000000)"><tspan x="0" y="8">New</tspan></text></g></g></g></g></g></g></g></g></svg>
               </MenuNameLiEm>
-            </MenuNameLi>
-            <MenuNameLi>프리랜서</MenuNameLi>
-            <MenuNameLi>
+            </MenuNameLi3>
+            <MenuNameLi3>프리랜서</MenuNameLi3>
+            <MenuNameLi3>
               AI 합격예측
               <MenuNameLiEm>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11"><g fill="none" fillRule="evenodd" fontFamily="AppleSDGothicNeo-SemiBold, Apple SD Gothic Neo" fontSize="9" fontWeight="500"><g fill="#36F"><g><g><g><g><g><g><text transform="translate(-931.000000, -13.000000) translate(224.000000, 7.000000) translate(210.000000, 6.000000) translate(350.000000, 0.000000) translate(147.000000, 0.000000)"><tspan x="0" y="8">Beta</tspan></text></g></g></g></g></g></g></g></g></svg>
               </MenuNameLiEm>
-            </MenuNameLi>
+            </MenuNameLi3>
           </MenuNameUl>
           <Aside>
             <AsideUl>
@@ -263,7 +329,19 @@ export default function Header() {
                   </svg>
                 </Button>
               </AsideLi>
-              <AsideLi>
+              <AsideLiMenu>
+                <Button style={{ margintop: 'relative', marginRight: '10px' }}>
+                  <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+                    <defs><path d="M9 7.5a1.5 1.5 0 1 1-.001 3.001A1.5 1.5 0 0 1 9 7.5zm5.05 0a1.5 1.5 0 1 1-.001 3.001A1.5 1.5 0 0 1 14.05 7.5zM4 7.5a1.5 1.5 0 1 1-.001 3.001A1.5 1.5 0 0 1 4 7.5z" id="a" /></defs>
+                    <g fill="none" fillRule="evenodd">
+                      <mask id="b" fill="#fff"><use xlinkHref="#a" /></mask>
+                      <use fill="#333" xlinkHref="#a" />
+                      <g mask="url(#b)" fill="#333"><path d="M0 0h18v18H0z" /></g>
+                    </g>
+                  </svg>
+                </Button>
+              </AsideLiMenu>
+              <AsideLiMedia>
                 <ProfileButton>
                   <AvatarBorder>
                     <AvatarImg />
@@ -276,11 +354,11 @@ export default function Header() {
                     </svg>
                   </Badge>
                 </ProfileButton>
-              </AsideLi>
-              <AsideLi>
+              </AsideLiMedia>
+              <AsideLiMedia>
                 <LeftDivision />
                 <DashboardButton>기업 서비스</DashboardButton>
-              </AsideLi>
+              </AsideLiMedia>
             </AsideUl>
           </Aside>
         </MainBarNav>

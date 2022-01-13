@@ -113,22 +113,6 @@ const InforButtonSvg = styled.svg`
   font-size: inherit;
 `;
 
-const BusType = styled.div`
-  font-size: 14px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #ffffff;
-  margin-left: 10px;
-  
-  @media(max-width: 576px){
-    font-size: 12px;
-    height: auto;
-  }
-`;
-
 const Info = styled.div`
   /* width: 75%;
     max-width: 100%;
