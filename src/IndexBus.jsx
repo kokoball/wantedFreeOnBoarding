@@ -30,14 +30,87 @@ const BusCard = styled.div`
   
 `;
 
-const DestinationShiftRow = styled.div`
-  display: flex;
-  justify-content: center;
-  background-color: #f7941e;
-  
-    width: 100%;
-    height: 21px;
-    padding-top: 9px;
+const InformationDiv = styled.div`
+  position: absolute;
+  top: 140px;
+  width: 270px;
+  height: 146px;
+  border-radius: 4px;
+  background-color: #fff;
+  text-align: left;
+  left: 90px;
+`;
+
+const Informationh2 = styled.h2`
+  margin: 20px 20px 0 20px;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 700;
+    color: #333;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+`;
+
+const Informationh3 = styled.h3`
+  margin: 0 20px;
+  height: 38px;
+  font-size: 14px;
+  line-height: 1.64;
+  color: #333;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+`;
+
+const Informationhr = styled.hr`
+  display: block;
+  height: 1px;
+  margin: 0;
+  border: none;
+  flex-shrink: 0;
+  background-color: #ececec;
+`;
+
+const InforButtonDiv = styled.div`
+  margin: 6px 0 0 13px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  color: #36f;
+`;
+
+const InforButtonSpan = styled.span`
+  width: 100%;
+  font-size: inherit;
+  font-weight: inherit;
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+  color: inherit;
+`;
+
+const InforButtonSpan2 = styled.span`
+  margin-top: -2px;
+  margin-right: -1px;
+  margin-left: 2px;
+`;
+
+const InforButtonSpan3 = styled.span`
+  width: 100%;
+  align-items: inherit;
+  justify-content: inherit;
+`;
+
+const InforButtonSvg = styled.svg`
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+  flex-shrink: 0;
+  font-size: inherit;
 `;
 
 const BusType = styled.div`
@@ -82,21 +155,38 @@ const MobileSwiper = styled.div`
   }
 `;
 
-const Button = styled.div`
-  all: unset;
-  padding: 1em 2em;
-  margin: 2em 2em;
-  color: burlywood;
-  border-radius: 10px;
-  border: 1px solid burlywood;
-  cursor: pointer;
-  &:hover {
-    background-color: burlywood;
-    color: #fff;
-  }
+const Button = styled.button`
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: absolute;
+  top: 200px;
+  width: 30px;
+  height: 60px;
+  opacity: .5;
+  border-radius: 15px;
+  font-size: 16px;
 `;
-const Center = styled.div`
-  text-align: center;
+const ButtonSpan = styled.span`
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: inherit;
+  -ms-flex-align: inherit;
+  align-items: inherit;
+  -webkit-justify-content: inherit;
+  -ms-flex-pack: inherit;
+  justify-content: inherit;
 `;
 
 export default React.memo(({
@@ -135,21 +225,44 @@ export default React.memo(({
       >
         {mobileTypes.map((type, index) => (
           <BusCard busType={type} key={type} index={index}>
-            <DestinationShiftRow busType={type}>
-              <BusType>
-                {getTypeName(type)}
-              </BusType>
-            </DestinationShiftRow>
             <Info>
               <Slide img={getTypeImg(type)} />
             </Info>
+            <InformationDiv busType={type}>
+              <Informationh2>
+                아는만큼 보인다
+              </Informationh2>
+              <Informationh3>
+                요즘
+              </Informationh3>
+              <Informationhr />
+              <div style={{ height: '10px' }} />
+              <InforButtonDiv>
+                <InforButtonSpan>
+                  바로가기
+                  <InforButtonSpan2>
+                    <InforButtonSpan3>
+                      <InforButtonSvg viewBox="0 0 18 18">
+                        <path d="m11.955 9-5.978 5.977a.563.563 0 0 0 .796.796l6.375-6.375a.563.563 0 0 0 0-.796L6.773 2.227a.562.562 0 1 0-.796.796L11.955 9z" />
+                      </InforButtonSvg>
+                    </InforButtonSpan3>
+                  </InforButtonSpan2>
+                </InforButtonSpan>
+              </InforButtonDiv>
+            </InformationDiv>
           </BusCard>
         ))}
       </MobileSwiper>
-      <Center>
-        <Button ref={leftButton}>Next</Button>
-        <Button ref={rightButton}>Next</Button>
-      </Center>
+      <Button ref={leftButton} style={{ right: 'calc((100% - 920px) / 2)' }}>
+        <ButtonSpan>
+          <svg style={{ width: '1em', height: '1em' }} viewBox="0 0 18 18"><path d="m11.955 9-5.978 5.977a.563.563 0 0 0 .796.796l6.375-6.375a.563.563 0 0 0 0-.796L6.773 2.227a.562.562 0 1 0-.796.796L11.955 9z" /></svg>
+        </ButtonSpan>
+      </Button>
+      <Button ref={rightButton} style={{ left: 'calc((100% - 920px) / 2' }}>
+        <ButtonSpan>
+          <svg style={{ width: '1em', height: '1em' }} viewBox="0 0 18 18"><path d="m6.045 9 5.978-5.977a.563.563 0 1 0-.796-.796L4.852 8.602a.562.562 0 0 0 0 .796l6.375 6.375a.563.563 0 0 0 .796-.796L6.045 9z" /></svg>
+        </ButtonSpan>
+      </Button>
     </Container>
   );
 });
