@@ -6,13 +6,12 @@ export default function Slide({ img }) {
 }
 
 const IMG = styled.img`
-  width: 800px;
-  height: 300px;
+  width: 96%;
+  height: 183px;
   margin-top: 15px;
-  padding: 0 7%;
-  /* @media (min-width: 1200px) {
-    max-width: 1060px;
-    width : 1060px;
+  padding: 0 2%;
+  object-fit: cover;
+  @media (min-width: 1200px) {
     height: 300px;
-  }   */
+  }  
 `;

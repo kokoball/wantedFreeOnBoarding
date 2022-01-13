@@ -31,46 +31,77 @@ const BusCard = styled.div`
 `;
 
 const InformationDiv = styled.div`
-  position: absolute;
-  top: 140px;
-  width: 270px;
-  height: 146px;
-  border-radius: 4px;
-  background-color: #fff;
-  text-align: left;
-  left: 90px;
-`;
-
-const Informationh2 = styled.h2`
-  margin: 20px 20px 0 20px;
-  font-size: 20px;
-  line-height: 1.5;
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 1;
   font-weight: 700;
-    color: #333;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-`;
-
-const Informationh3 = styled.h3`
-  margin: 0 20px;
-  height: 38px;
-  font-size: 14px;
-  line-height: 1.64;
   color: #333;
-  font-weight: 500;
+  width: "auto";
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  text-align: center;
+  @media (min-width: 1200px) {
+    position: absolute;
+    top: 140px;
+    width: 270px;
+    height: 146px;
+    border-radius: 4px;
+    background-color: #fff;
+    text-align: left;
+    left: 90px;
+  }
+`;
+
+const Informationh2 = styled.h2`
+  margin: 0 20px;
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 700;
+  color: #333;
+  width: "auto";
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  @media (min-width: 1200px) {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+`;
+
+const Informationh3 = styled.h3`
+  margin: 0;
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.15;
+  color: #666;
+  width: "auto";
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  @media (min-width: 1200px) {
+    margin: 0 20px;
+    height: 38px;
+    font-size: 14px;
+    line-height: 1.64;
+    color: #333;
+  }
 `;
 
 const Informationhr = styled.hr`
-  display: block;
+  display: none;
   height: 1px;
   margin: 0;
   border: none;
   flex-shrink: 0;
   background-color: #ececec;
+  @media (min-width: 1200px) {
+    display: block;
+  }
 `;
 
 const InforButtonDiv = styled.div`
@@ -114,17 +145,8 @@ const InforButtonSvg = styled.svg`
 `;
 
 const Info = styled.div`
-  /* width: 75%;
-    max-width: 100%;
-    height: 140px;
-  padding-top: 41px; */
-  /* border-bottom: 1px #e4e4e4 solid;
-  border-left: 1px #e4e4e4 solid;
-  border-right: 1px #e4e4e4 solid; */
-  
-    /* padding-top: 27px; */
-    width: calc(100% - 2px);
-    height: 183px;
+  width: calc(100% - 2px);
+  height: 183px;
 `;
 
 const MobileSwiper = styled.div`
@@ -159,6 +181,9 @@ const Button = styled.button`
   opacity: .5;
   border-radius: 15px;
   font-size: 16px;
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;
 const ButtonSpan = styled.span`
   width: 100%;
@@ -246,12 +271,12 @@ export default React.memo(({
           </BusCard>
         ))}
       </MobileSwiper>
-      <Button ref={rightButton} style={{ right: 'calc((100% - 920px) / 2)' }}>
+      <Button ref={rightButton} style={{ right: 'calc((100% - 1200px) / 2)' }}>
         <ButtonSpan>
           <svg style={{ width: '1em', height: '1em' }} viewBox="0 0 18 18"><path d="m11.955 9-5.978 5.977a.563.563 0 0 0 .796.796l6.375-6.375a.563.563 0 0 0 0-.796L6.773 2.227a.562.562 0 1 0-.796.796L11.955 9z" /></svg>
         </ButtonSpan>
       </Button>
-      <Button ref={leftButton} style={{ left: 'calc((100% - 920px) / 2' }}>
+      <Button ref={leftButton} style={{ left: 'calc((100% - 1200px) / 2' }}>
         <ButtonSpan>
           <svg style={{ width: '1em', height: '1em' }} viewBox="0 0 18 18"><path d="m6.045 9 5.978-5.977a.563.563 0 1 0-.796-.796L4.852 8.602a.562.562 0 0 0 0 .796l6.375 6.375a.563.563 0 0 0 .796-.796L6.045 9z" /></svg>
         </ButtonSpan>
