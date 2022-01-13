@@ -1,16 +1,15 @@
 import React from 'react';
 
-import Header from './Header';
-import IndexPage from './IndexPage';
+import HeaderPage from './HeaderPage';
+import BannerPage from './BannerPage';
 import PaddingBox from './PaddingBox';
 
 export default function App() {
   return (
     <div>
-      <Header />
+      <HeaderPage />
       <PaddingBox />
-      {/* <Slider /> */}
-      <IndexPage />
+      <BannerPage />
       <PaddingBox />
     </div>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import IndexBusContainer from './IndexBusContainer';
+import BannerContainer from './BannerContainer';
 
 const Container = styled.div`
   width: 100%;
@@ -9,18 +9,18 @@ const Container = styled.div`
   padding: 0;
 `;
 
-const IndexRow = styled.div`
+const BannerRow = styled.div`
   width: 100%;
   margin: 0;
   padding: 0;
 `;
 
-export default function IndexPage() {
+export default function BannerPage() {
   return (
     <Container>
-      <IndexRow>
-        <IndexBusContainer />
-      </IndexRow>
+      <BannerRow>
+        <BannerContainer />
+      </BannerRow>
     </Container>
   );
 }

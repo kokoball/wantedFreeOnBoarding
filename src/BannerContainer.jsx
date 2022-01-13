@@ -1,10 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import IndexBus from './IndexBus';
+import Banner from './Banner';
 
-export default function IndexBusContainer() {
-  // const busTypes = ["shuttle","daesung","cityBus"];
-
+export default function BannerContainer() {
   const sliderRef = useRef();
   const [mobileTypes, setMobileTypes] = useState([0, 1, 2, 3, 4, 5, 6]); // 슬라이드 설정
   const leftButton = useRef();
@@ -37,7 +35,6 @@ export default function IndexBusContainer() {
           }
         }
       }
-      // console.log(walk);
       walk = 0;
     }
 
@@ -61,9 +58,7 @@ export default function IndexBusContainer() {
     function slideTouchMove(e) { // 슬라이드 재설정
       e.preventDefault();
       walk = (e.touches[0].pageX - sliderRef.current.offsetLeft - startX) * 0.9;
-      // console.log(`walk${walk}`);
       sliderRef.current.scrollLeft = scrollValue - walk;
-      // console.log(mobileTypes);
     }
 
     function LeftClick() { // Next button 슬라이드 재설정
@@ -117,7 +112,7 @@ export default function IndexBusContainer() {
   }, []);
 
   return (
-    <IndexBus
+    <Banner
       sliderRef={sliderRef}
       mobileTypes={mobileTypes}
       leftButton={leftButton}

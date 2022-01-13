@@ -12,29 +12,31 @@ const HeaderContainer = styled.header`
   background-color: #fff;
   z-index: 100;
   box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
+
   @media (max-width: 1100px){
     height: 110px;
   }
 `;
 
 const NavMediaQuery = styled.div`
-position: relative;
-max-width: 1060px;
-height: 50px;
-@media (max-width: 767px){
-  height: 110px;
-}
-@media (min-width: 768px) and (max-width: 991px){
-  margin: 0 auto;
-  height: 110px;
-  width: 90%;
-}
-@media (min-width: 992px) and (max-width: 1199px){
-  margin: 0 auto;
+  position: relative;
+  max-width: 1060px;
   height: 50px;
-  width: 90%;
-}
-@media screen and (min-width: 1200px) {
+
+  @media (max-width: 767px){
+    height: 110px;  
+  }
+  @media (min-width: 768px) and (max-width: 991px){
+    margin: 0 auto;
+    height: 110px;
+    width: 90%;
+  }
+  @media (min-width: 992px) and (max-width: 1199px){
+    margin: 0 auto;
+    height: 50px;
+    width: 90%;
+  }
+  @media screen and (min-width: 1200px) {
     margin: 0 auto;
     height: 50px;
     width: 87.72%;
@@ -43,9 +45,9 @@ height: 50px;
 const MainBarNav = styled.nav`
   display: flex;
   justify-content: space-evenly;
-    align-items: center;
-    align-content: center;
-    flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
 `;
 const Button = styled.button`
   margin: 0;
@@ -75,30 +77,30 @@ const ProfileButton = styled.button`
 `;
 
 const AvatarBorder = styled.div`
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 1px solid #e1e2e3;
-    background-color: #fff;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    overflow: hidden;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #e1e2e3;
+  background-color: #fff;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
 `;
 const AvatarImg = styled.div`
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background-position: 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url(https://lh3.googleusercontent.com/a/AATXAJzhF8hjuNE-eG8wKFLfd9IyhgCfvYafFK2BleK2=s96-c);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(https://lh3.googleusercontent.com/a/AATXAJzhF8hjuNE-eG8wKFLfd9IyhgCfvYafFK2BleK2=s96-c);
 `;
 
 const MenuImg = styled.img`
@@ -140,6 +142,7 @@ const MenuNameLi1 = styled.li`
   font-weight: 600;
   padding: 15px;
   display: inline-block;
+
   @media (min-width: 865px) {
     display: none;
   }
@@ -163,17 +166,18 @@ const MenuNameLi3 = styled.li`
   font-weight: 600;
   padding: 15px;
   display: inline-block;
+
   @media (max-width: 865px) {
     display: none;
   }
 `;
 
 const MenuNameLiEm = styled.em`  
-    position: absolute;
-    top: 10px;
-    right: -5px;
-    pointer-events: none;
-    font-style: normal;
+  position: absolute;
+  top: 10px;
+  right: -5px;
+  pointer-events: none;
+  font-style: normal;
 `;
 
 const Aside = styled.aside`
@@ -213,6 +217,7 @@ const AsideLiMenu = styled.li`
   display: inline-block;
   height: 100%;
   vertical-align: middle;
+
   @media (min-width: 1100px) {
     display: none;
   }
@@ -224,6 +229,7 @@ const AsideLiMedia = styled.li`
   display: inline-block;
   height: 100%;
   vertical-align: middle;
+  
   @media (max-width: 1100px) {
     display: none;
   }
@@ -273,7 +279,7 @@ const Badge = styled.span`
   border-radius: 5px;
 `;
 
-export default function Header() {
+export default function HeaderPage() {
   return (
     <HeaderContainer>
       <NavMediaQuery>

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const Padding = styled.div`
   height: 50px;
+  
   @media (max-width: 1100px){
     height: 110px;
   }
